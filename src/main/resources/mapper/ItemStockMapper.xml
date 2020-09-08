@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.bucheng.miaosha.mapper.ItemStockMapper">
+    <update id="decrementStock">
+         update imooc_order.ad_item_stock set stock = stock - #{amount},update_time = now() where id =#{itemStockId} and stock >= #{amount};
+    </update>
+
+    <update id="decrementStockByItemId">
+        update imooc_order.ad_item_stock set stock = stock -#{amount}, update_time =now() where item_id = #{itemId} and stock >=#{amount}
+    </update>
+</mapper>

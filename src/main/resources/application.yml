@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/imooc_order?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF-8
+  application:
+    name: boot-miaosha
+
+mq:
+  nameserver:
+    addr: 127.0.0.1:9876
+  topic:
+    name: T_BOOT_MIAO_SHA
+
+
+server:
+  port: 9090
+  servlet:
+    context-path: /miaosha
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: cn.bucheng.miaosha.model.**.po
+  mapper-locations: classpath*:mapper/*.xml
+
+
